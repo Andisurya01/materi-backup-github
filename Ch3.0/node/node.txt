@@ -1,0 +1,3 @@
+boleh dibuat inisial proyek untuk challengenya, jalankan node init
+untuk express apa yang akan ditambahkan
+install library express

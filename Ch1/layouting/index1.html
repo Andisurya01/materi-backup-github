@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/layouting/assets/css/style.css" />
+    <title>Document</title>
+
+    <!--Internal CSS-->
+    <style>
+        body{
+            background: grey;
+        }
+
+        .container{
+            background-color: brown;
+            height: 500px;
+            padding: 16px;
+            display: flex;
+            /* flex-direction: row;
+            flex-wrap: wrap; */
+            flex-flow: column-reverse nowrap;
+
+            justify-content: center; /*align center secara horizontal*/
+            align-items: flex-start; /*align center secara vertical*/
+            gap: 10px 20px;
+        }
+
+        .Item{
+            background-color: greenyellow;
+            padding: 5px 20px;
+            color: #000;
+            border: 1px solid black;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 class="title" id="header">We are learning about Layouting</h1>
+    <h2>1. Flexbox</h2>
+
+    <div class="container">
+      <div class="Item">Item 1</div>
+      <div class="Item">Item 2</div>
+      <div class="Item">Item 3</div>
+    </div>
+  </body>
+</html>

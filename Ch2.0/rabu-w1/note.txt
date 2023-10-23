@@ -1,0 +1,30 @@
+
+{untuk menjalankan method harus menggunakan ()
+
+contoh : toUpperCase()}
+
+{
+    empty string di (nama = "")
+    biasanya digunakan untuk error massage
+}
+
+null tipe datanya adalah object
+
+{
+    4. Boolean
+falsy dan truthy
+falsy adalah 
+
+truthy adalah
+
+boolean juga bisa menggunakan negasi
+}
+
+{
+    5. number
+}
+
+{
+    OPERATOR
+    
+}

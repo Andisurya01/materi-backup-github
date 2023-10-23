@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-family: monospace;
+        }
+
+        body{
+            background: grey;
+        }
+
+        .container{
+            height: 100px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows:  auto auto auto; 
+            /*default grid itu column*/
+            gap: 5px;
+            /* grid-template-areas: 'item1 item1 item1 item1' ; */
+        }
+
+        .item1{
+            /* grid-row: 3/5; */
+            /* grid-row-start: 2;
+            grid-row-end: 4; */
+            /*grid end diletakan pada line akhir row*/
+
+            /*untuk grid-column sesuai namanya yaitu untuk mengatur grid column, 
+            kurang lebih sama dengan grid-row*/
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 3;
+
+        }
+
+        .item{
+            border: 1px black solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* grid-area: 'item1'; */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title header">We Are Learning about Layouting</h1>
+    <h2>Grid</h2>
+    <div class="container">
+        <div class="item item1">item 1</div>
+        <div class="item">item 2</div>
+        <div class="item">item 3</div>
+        <div class="item">item 4</div>
+        <div class="item">item 5</div>
+        <div class="item">item 6</div>
+        <div class="item">item 7</div>
+        <div class="item">item 8</div>
+        <div class="item">item 9</div>
+        <div class="item">item 10</div>
+        <div class="item">item 11</div>
+    </div>
+
+</body>
+</html>

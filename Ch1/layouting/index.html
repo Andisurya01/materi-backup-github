@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/layouting/assets/css/style.css">
+    <title>Document</title>
+
+    <!--Internal CSS-->
+    <style>
+        h2{
+            color: blue;
+        }
+
+        h1
+        {
+            color: red;
+        }
+        .title{
+            color: magenta;
+        }
+
+        #header{
+            color: blue;
+        }
+
+        .Item{
+            height: 50px;
+            width: 250px;
+            margin: 10px;
+            border: 1px solid black;
+        }
+        
+        .item1{
+            background: red;
+            position: static;
+            top: 10px;
+        }
+        .item2{
+            background: blue;
+            position: relative;
+            top: 10px;
+            left: 20px;
+            margin-left: 20px;
+        }
+        .item3{
+            background: magenta;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        .item4{
+            background: pink;
+            position: fixed;
+            top: 0px;
+        }
+        .item5{
+            background: green;
+            position: sticky;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title" id="header">We are learning about Layouting</h1>
+    <h2>by Binar Academy</h2>
+
+    <div class="Item item1">Item 1</div>
+    <div class="Item item2">Item 2</div>
+    <div class="Item item3">Item 3</div>
+    <div class="Item item4">Item 4</div>
+    <div class="Item item5">Item 5</div>
+</body>
+</html>
