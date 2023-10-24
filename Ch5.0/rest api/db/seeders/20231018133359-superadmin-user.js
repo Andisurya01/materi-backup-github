@@ -17,7 +17,7 @@ module.exports = {
     await queryInterface.bulkInsert('Users', [{
       name : 'Andi Surya Priyadi',
       email : 'andisurya@gmail.com', 
-      encryptPassword : bcrypt.hashSync('superadmin123', 10),
+      encryptedPassword : bcrypt.hashSync('superadmin123', 10),
       phoneNumber : '08666666666',
       address : 'Pandeglang',
       role : 'SUPERADMIN',

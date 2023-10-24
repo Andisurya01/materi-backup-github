@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const { v4: uuidv4 } = require('uuid');
 module.exports = (sequelize, DataTypes) => {
   class Feeds extends Model {
     /**
@@ -31,6 +32,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Feeds',
+    paranoid : true
   });
+  Feeds.beforeCreate(Feeds => Feeds.id = uuidv4())
   return Feeds;
 };

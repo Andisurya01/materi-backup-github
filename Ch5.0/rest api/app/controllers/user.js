@@ -41,7 +41,6 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
     try {
         const credentials = req.body;
-
         const user = await userServices.checkUser(credentials)
         res.json({
             status: "OK",

@@ -19,7 +19,7 @@ exports.listFeed = async (category) => {
 exports.createFeed = async (payload, userId) => {
     try {
         const feed = await feedRepository.createFeed(payload, userId)
-        return feed;
+        return feed
     } catch (err) {
         throw new ApplicationError(`Failed to get list of feeds : ${err.message}`, 500)
     }
@@ -38,18 +38,18 @@ exports.getFeedById = async (id) => {
 
 }
 
-exports.updateFeedById = async (id, payload) => {
+exports.updateFeedById = async (id, payload, userId) => {
     try {
-        const [_, data] = await feedRepository.update(id, payload)
+        const [_, data] = await feedRepository.update(id, payload, userId)
         return data
     } catch (err) {
         throw new ApplicationError(`Failed to get list of feeds : ${err.message}`, 500)
     }
 }
 
-exports.deleteFeedByUd = async (id) =>{
+exports.deleteFeedByUd = (id, userId) =>{
     try{
-        return await feedRepository.destroy(id)
+        return Promise.all([feedRepository.destroy(id),feedRepository.destroyTemporary(id,{}, userId)])
     }catch(err){
         throw new ApplicationError(`Failed to get list of feeds : ${err.message}`, 500)
     }

@@ -1,4 +1,4 @@
-const { Feeds } = require("../models");
+
 const feedServices = require('./../services/feed')
 
 const handleGetListFeeds = async (req, res) => {
@@ -40,7 +40,8 @@ const handleGetIdFeeds = (req, res) => {
 const handleDeleteFeed = async (req, res) => {
     try {
         const id = req.params.id
-        await feedServices.deleteFeedByUd(id)
+        const {id : userId} = req.user
+        await feedServices.deleteFeedByUd(id, userId)
         res.json({
             status : "OK",
             message : "Success",
@@ -56,8 +57,8 @@ const handleDeleteFeed = async (req, res) => {
 
 const handleCreateFeed = async (req, res) => {
     try {
-        const body = body
-        const {id: userId} = req.body
+        const body = req.body
+        const {id: userId} = req.user
         const data = await feedServices.createFeed(body, userId)
         res.json({
             status : "OK",
@@ -76,7 +77,7 @@ const handleEditFeed = async(req, res) => {
     try{
         const {id}= req.feed;
         const body = req.body
-        const {id : userId} = req.body.id
+        const {id : userId} = req.user
     
         const data = await feedServices.updateFeedById(id, body, userId)
 

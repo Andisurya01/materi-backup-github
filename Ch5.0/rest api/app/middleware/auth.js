@@ -33,7 +33,7 @@ exports.isSuperAdmin = (req, res, next) => {
 exports.isSuperOrAdmin = (req, res, next) => {
     const { role } = req.user
 
-    if (role !== 'SUPERADMIN' || role !== 'ADMIN') {
+    if (role !== 'SUPERADMIN' && role !== 'ADMIN') {
         res.status(403).json({
             status: "FAIL",
             message: "FORBIDDEN",

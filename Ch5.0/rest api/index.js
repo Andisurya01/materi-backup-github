@@ -19,7 +19,7 @@ app.get("/feeds", middleware.authorize, handleGetListFeeds)
 
 app.delete("/feeds/:id",middleware.authorize,middleware.isSuperOrAdmin,findAndSetFeedById, handleDeleteFeed)
 
-app.post("/feeds",middleware.authorize, middleware.isSuperOrAdmin, handleCreateFeed)
+app.post("/feeds",middleware.authorize,  handleCreateFeed)
 
 app.put("/feeds/:id", middleware.authorize, middleware.isSuperOrAdmin,findAndSetFeedById, handleEditFeed)
 

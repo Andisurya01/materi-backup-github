@@ -1,4 +1,4 @@
-const { Feeds } = require('./../models')
+const { Feeds, User } = require('./../models')
 
 exports.getListFeedsByCategory = (category) => {
     return Feeds.findAll({ where: { category } })
@@ -31,8 +31,12 @@ exports.findByPk = (id) => {
     })
 }
 
-exports.update = (id, payload) => {
-    return Feeds.update(payload, { where: { id }, returning: true })
+exports.update = (id, payload, userId) => {
+    return Feeds.update({...payload, updatedBy : userId}, { where: { id }, returning: true, paranoid: false })
+}
+
+exports.destroyTemporary = (id, payload, userId) => {
+    return Feeds.update({...payload, deletedBy : userId}, { where: { id }, returning: true, paranoid: false })
 }
 
 exports.destroy = (id) => {

@@ -42,7 +42,7 @@ const authorize = async (bearerToken) => {
 
         const decoded = verifyToken(token)
 
-        const { id } = decoded
+        const {id} = decoded
 
         const user = await userRepository.findByPk(id);
 

@@ -11,11 +11,10 @@ exports.create = async (payload, isAdmin) => {
             throw new ApplicationError(`Please input email and password`, 500)
         }
 
-        const encryptPassword = await authServices.encryptPassword(password);
-        console.log(encryptPassword);
+        const encryptedPassword = await authServices.encryptPassword(password);
         const user = await userRepository.create({
             email,
-            encryptPassword,
+            encryptedPassword,
             name,
             address,
             phoneNumber,
@@ -43,7 +42,7 @@ exports.checkUser = async (credentials) =>{
         }
 
 
-        const checkPassword = await authServices.checkPassword(password, user.encryptPassword)
+        const checkPassword = await authServices.checkPassword(password, user.encryptedPassword)
 
         if (!checkPassword) {
             throw new ApplicationError("password is wrong", 500)
